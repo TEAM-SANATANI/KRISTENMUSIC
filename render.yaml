@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: telegram-music-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      # ---- required ----
+      - key: BOT_TOKEN
+        sync: false          # paste in Render dashboard
+      # ---- optional: database + owner ----
+      - key: MONGO_URI
+        sync: false          # MongoDB Atlas URI
+      - key: OWNER_ID
+        sync: false          # your Telegram numeric ID (/stats, /broadcast, /addpremium)
+      - key: DB_NAME
+        value: musicbot
+      # ---- optional: assistant (VC join/leave alerts) ----
+      - key: API_ID
+        sync: false          # from my.telegram.org
+      - key: API_HASH
+        sync: false
+      - key: SESSION_STRING
+        sync: false          # from gen_session.py (keep secret!)
+      # ---- optional: looks ----
+      - key: START_STICKER
+        sync: false          # sticker file_id (/stickerid), else random from START_STICKER_SET
+      - key: CUSTOM_EMOJI
+        sync: false          # JSON like {"magic":"<custom_emoji_id>"}  (/emojiid)
+      - key: SUPPORT_URL
+        sync: false          # https://t.me/yourchannel
+      # ---- limits ----
+      - key: MAX_PARALLEL
+        value: "2"
+      - key: FREE_MAX_SECONDS
+        value: "600"
+      - key: PREMIUM_MAX_SECONDS
+        value: "1800"
+      - key: FREE_COOLDOWN
+        value: "20"
