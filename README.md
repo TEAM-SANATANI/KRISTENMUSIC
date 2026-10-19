@@ -1,4 +1,4 @@
-# Telegram Music Bot v2
+# KRISTENMUSIC
 
 Plugins + MongoDB + premium + assistant (VC join/leave alerts) + magical look.
 Sab optional hai: sirf `BOT_TOKEN` se bhi bot chalta hai.
