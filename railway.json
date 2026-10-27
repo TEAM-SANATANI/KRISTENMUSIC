@@ -1,0 +1,38 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+
+  "build": {
+    "builder": "NIXPACKS"
+  },
+
+  "deploy": {
+    "startCommand": "python main.py",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  },
+
+  "variables": {
+    "API_ID": "",
+    "API_HASH": "",
+    "BOT_TOKEN": "",
+    "STRING_SESSION": "",
+    "MONGO_DB_URL": "",
+    "OWNER_ID": "",
+    "LOGGER_ID": "",
+
+    "BOT_NAME": "",
+    "BOT_LINK": "",
+    "UPDATES_CHANNEL": "",
+    "SUPPORT_GROUP": "",
+
+    "START_PHOTOS": "https://files.catbox.moe/jgt2vm.png",
+    "PING_IMG_URL": "https://files.catbox.moe/ddzvc0.jpg",
+
+    "SESSION_NAME": "ShizuMusic",
+    "PORT": "10000",
+
+    "MAX_DURATION_SECONDS": "1800",
+    "QUEUE_LIMIT": "20",
+    "COOLDOWN": "10"
+  }
+}

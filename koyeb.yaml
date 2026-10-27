@@ -1,0 +1,74 @@
+name: ShizuMusic
+
+services:
+  - name: shizumusic
+    type: worker
+
+    git:
+      repository: https://github.com/Badmunda05/ShizuMusic
+      branch: main
+
+    build:
+      buildpack: python
+
+    run:
+      command: python main.py
+
+    env:
+      - name: API_ID
+        value: ""
+
+      - name: API_HASH
+        value: ""
+
+      - name: BOT_TOKEN
+        value: ""
+
+      - name: STRING_SESSION
+        value: ""
+
+      - name: MONGO_DB_URL
+        value: ""
+
+      - name: OWNER_ID
+        value: ""
+
+      - name: LOGGER_ID
+        value: ""
+
+      - name: BOT_NAME
+        value: ""
+
+      - name: BOT_LINK
+        value: ""
+
+      - name: UPDATES_CHANNEL
+        value: ""
+
+      - name: SUPPORT_GROUP
+        value: ""
+
+      - name: START_PHOTOS
+        value: "https://files.catbox.moe/jgt2vm.png"
+
+      - name: PING_IMG_URL
+        value: "https://files.catbox.moe/ddzvc0.jpg"
+
+      - name: SESSION_NAME
+        value: "ShizuMusic"
+
+      - name: PORT
+        value: "10000"
+
+      - name: MAX_DURATION_SECONDS
+        value: "1800"
+
+      - name: QUEUE_LIMIT
+        value: "20"
+
+      - name: COOLDOWN
+        value: "10"
+
+    scaling:
+      min: 1
+      max: 1

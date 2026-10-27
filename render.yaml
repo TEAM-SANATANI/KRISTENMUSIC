@@ -1,0 +1,66 @@
+services:
+  - type: web
+    name: ShizuMusicBot
+    env: python
+    plan: free
+
+    buildCommand: "pip3 install --no-cache-dir --upgrade --requirement requirements.txt"
+    startCommand: "python main.py"
+
+    envVars:
+      - key: API_ID
+        sync: false
+
+      - key: API_HASH
+        sync: false
+
+      - key: BOT_TOKEN
+        sync: false
+
+      - key: STRING_SESSION
+        sync: false
+
+      - key: MONGO_DB_URL
+        sync: false
+
+      - key: OWNER_ID
+        sync: false
+
+      - key: LOGGER_ID
+        sync: false
+
+      - key: BOT_NAME
+        sync: false
+
+      - key: BOT_LINK
+        sync: false
+
+      - key: UPDATES_CHANNEL
+        sync: false
+
+      - key: SUPPORT_GROUP
+        sync: false
+
+      - key: START_PHOTOS
+        value: https://files.catbox.moe/jgt2vm.png
+
+      - key: PING_IMG_URL
+        value: https://files.catbox.moe/ddzvc0.jpg
+
+      - key: PYTHON_VERSION
+        value: 3.10.13
+
+      - key: SESSION_NAME
+        value: ShizuMusic
+
+      - key: PORT
+        value: "10000"
+
+      - key: MAX_DURATION_SECONDS
+        value: "1800"
+
+      - key: QUEUE_LIMIT
+        value: "20"
+
+      - key: COOLDOWN
+        value: "10"
