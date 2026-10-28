@@ -1,13 +1,13 @@
 # ═══════════════════════════════════════════════════════════════
-#                     🎵 SHIZUMUSIC
+#                     🎵 KRISTENMUSIC
 #
-#                   © 2026 BAD MUNDA
+#                   © 2026 TEAM SANATANI
 #
-#                Developed with ❤️ by Bad Munda
+#                Developed with ❤️ by Toxic Xᴅ
 #
 #             Do not remove or alter the original credits.
 #
-#           Copyright © 2026 Bad Munda. All rights reserved.
+#           Copyright © 2026 Team Sanatani. All rights reserved.
 #
 #              
 # ═══════════════════════════════════════════════════════════════
@@ -22,8 +22,8 @@ from typing import Dict, List, Optional
 import config
 from py_yt import VideosSearch
 
-from ShizuMusic.core.queue import add_to_queue, get_queue
-from ShizuMusic.utils.db import (
+from KristenMusic.core.queue import add_to_queue, get_queue
+from KristenMusic.utils.db import (
     get_autoplay_lang as _db_get_lang,
     get_autoplay_mood as _db_get_mood,
     is_autoplay_enabled as _db_get_enabled,
@@ -31,8 +31,8 @@ from ShizuMusic.utils.db import (
     set_autoplay_lang as _db_set_lang,
     set_autoplay_mood as _db_set_mood,
 )
-from ShizuMusic.utils.formatters import iso_to_human, iso_to_sec, sec_to_iso
-from ShizuMusic.utils.youtube import extract_video_id, related_videos
+from KristenMusic.utils.formatters import iso_to_human, iso_to_sec, sec_to_iso
+from KristenMusic.utils.youtube import extract_video_id, related_videos
 
 logger = logging.getLogger(__name__)
 AUTOPLAY_TAG = "🔁 AutoPlay"
@@ -1581,7 +1581,7 @@ def is_same_song(title1: str, title2: str) -> bool:
     return similarity >= 0.7
 
 
-_BAD_PHRASES = [
+_KRISTEN_PHRASES = [
     # playlists / compilations
     "jukebox", "mashup", "compilation", "playlist", "medley",
     "non stop", "non-stop", "nonstop", "megamix", "full album", "top 10", "top 20",
@@ -1600,12 +1600,12 @@ _BAD_PHRASES = [
     "gaming", "breaking news", "news update", "food vlog", "travel vlog",
     "recipe", "cooking",
 ]
-_BAD_RE = re.compile(
+_KRISTEN_RE = re.compile(
     r"(?<![a-z0-9])(?:" + "|".join(re.escape(p) for p in _BAD_PHRASES) + r"|mix)(?![a-z0-9])"
 )
 
 
-def is_bad_song(title: str, duration_sec: int) -> bool:
+def is_KRISTEN_song(title: str, duration_sec: int) -> bool:
     """True for anything that is not a normal single song."""
     if not title:
         return True
