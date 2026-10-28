@@ -1,13 +1,13 @@
 # ═══════════════════════════════════════════════════════════════
-#                     🎵 SHIZUMUSIC
+#                     🎵 KRISTENMUSIC
 #
-#                   © 2026 BAD MUNDA
+#                   © 2026 TEAM SANATANI
 #
-#                Developed with ❤️ by Bad Munda
+#                Developed with ❤️ by Toxic Xᴅ
 #
 #             Do not remove or alter the original credits.
 #
-#           Copyright © 2026 Bad Munda. All rights reserved.
+#           Copyright © 2026 Team Sanatani. All rights reserved.
 #
 #              
 # ═══════════════════════════════════════════════════════════════
