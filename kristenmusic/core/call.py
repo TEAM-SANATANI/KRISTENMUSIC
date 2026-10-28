@@ -1,13 +1,13 @@
 # ═══════════════════════════════════════════════════════════════
-#                     🎵 SHIZUMUSIC
+#                     🎵 KRISTENMUSIC
 #
-#                   © 2026 BAD MUNDA
+#                   © 2026 TEAM SANATANI
 #
-#                Developed with ❤️ by Bad Munda
+#                Developed with ❤️ by Toxic Xᴅ
 #
 #             Do not remove or alter the original credits.
 #
-#           Copyright © 2026 Bad Munda. All rights reserved.
+#           Copyright © 2026 Team Sanatani. All rights reserved.
 #
 #              
 # ═══════════════════════════════════════════════════════════════
@@ -22,10 +22,10 @@ from pytgcalls.types import (
     StreamEnded,
 )
 
-from ShizuMusic import LOGGER, bot, call_py
-from ShizuMusic.core.queue import clear_queue, peek_current, pop_current, queue_size
-from ShizuMusic.utils.helpers import delete_file
-from ShizuMusic.utils.language import chat_strings
+from KristenMusic import LOGGER, bot, call_py
+from KristenMusic.core.queue import clear_queue, peek_current, pop_current, queue_size
+from KristenMusic.utils.helpers import delete_file
+from KristenMusic.utils.language import chat_strings
 from richgram import rich_esc, rich_heading, rich_kv_table, rich_note, rich_send
 
 
@@ -37,7 +37,7 @@ async def leave_vc(chat_id: int) -> None:
     # Drop pending autoplay suggestions, but keep the ON/OFF setting: once
     # an admin turns AutoPlay on it stays on until they turn it off.
     try:
-        from ShizuMusic.core.autoplay import reset_autoplay_state
+        from KristenMusic.core.autoplay import reset_autoplay_state
         reset_autoplay_state(chat_id)
     except Exception:
         pass
@@ -86,7 +86,7 @@ async def on_call_left(_: object, update: ChatUpdate) -> None:
             pass
 
     try:
-        from ShizuMusic.core.autoplay import reset_autoplay_state
+        from KristenMusic.core.autoplay import reset_autoplay_state
         reset_autoplay_state(chat_id)
     except Exception:
         pass
@@ -130,7 +130,7 @@ async def on_stream_end(_: object, update: StreamEnded) -> None:
     # ── Queue is empty: let AutoPlay try to add ONE related song ────────────────
     if not nxt:
         try:
-            from ShizuMusic.core.autoplay import autoplay_next
+            from KristenMusic.core.autoplay import autoplay_next
 
             if await autoplay_next(chat_id, done):
                 nxt = peek_current(chat_id)
@@ -141,11 +141,11 @@ async def on_stream_end(_: object, update: StreamEnded) -> None:
     # ── Play next song ───────────────────────────────────────────────────────
     if nxt:
 
-        from ShizuMusic.core.player import play_song
+        from KristenMusic.core.player import play_song
 
         # start getting the *next* suggestion ready while this song plays
         try:
-            from ShizuMusic.core.autoplay import schedule_prefetch
+            from KristenMusic.core.autoplay import schedule_prefetch
             schedule_prefetch(chat_id, nxt)
         except Exception:
             pass
