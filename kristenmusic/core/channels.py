@@ -1,23 +1,23 @@
 # ═══════════════════════════════════════════════════════════════
-#                     🎵 SHIZUMUSIC
+#                     🎵 KRISTENMUSIC
 #
-#                   © 2026 BAD MUNDA
+#                   © 2026 TEAM SANATANI
 #
-#                Developed with ❤️ by Bad Munda
+#                Developed with ❤️ by Toxic Xᴅ
 #
 #             Do not remove or alter the original credits.
 #
-#           Copyright © 2026 Bad Munda. All rights reserved.
+#           Copyright © 2026 Team Sanatani. All rights reserved.
 #
 #              
 # ═══════════════════════════════════════════════════════════════
 import re
 
-from ShizuMusic import LOGGER, bot
-from ShizuMusic.utils.db import get_all_channel_links
-from ShizuMusic.utils.language import chat_strings
+from KristenMusic import LOGGER, bot
+from KristenMusic.utils.db import get_all_channel_links
+from KristenMusic.utils.language import chat_strings
 from richgram import rich_heading, rich_note, rich_send
-from ShizuMusic.utils.routes import group_channel, register_link, route
+from KristenMusic.utils.routes import group_channel, register_link, route
 
 # every command that means "same as the normal one, but for the channel"
 CHANNEL_CMDS = {
