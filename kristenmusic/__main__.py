@@ -1,13 +1,13 @@
 # ═══════════════════════════════════════════════════════════════
-#                     🎵 SHIZUMUSIC
+#                     🎵 KRISTENMUSIC
 #
-#                   © 2026 BAD MUNDA
+#                   © 2026 TEAM SANATANI
 #
-#                Developed with ❤️ by Bad Munda
+#                Developed with ❤️ by Toxic Xᴅ
 #
 #             Do not remove or alter the original credits.
 #
-#           Copyright © 2026 Bad Munda. All rights reserved.
+#           Copyright © 2026 Team Sanatani. All rights reserved.
 #
 #              
 # ═══════════════════════════════════════════════════════════════
@@ -26,9 +26,9 @@ from pyrogram import idle
 from pyrogram.types import BotCommand
 
 import config
-from ShizuMusic import LOGGER, assistant, bot, call_py
-from ShizuMusic.modules import ALL_MODULES
-from ShizuMusic.utils.logs import logger_active
+from KristenMusic import LOGGER, assistant, bot, call_py
+from KristenMusic.modules import ALL_MODULES
+from KristenMusic.utils.logs import logger_active
 from richgram import (
     rich_esc,
     rich_heading,
@@ -45,7 +45,7 @@ _flask = Flask(__name__)
 
 @_flask.route("/")
 def _home():
-    return "❍ ꜱʜɪᴢᴜᴍᴜꜱɪᴄ ɪꜱ ʀᴜɴɴɪɴɢ ᴍᴀᴅᴇ ʙʏ ʙᴀᴅᴍᴜɴᴅᴀ 💕", 200
+    return "❍ ᴋʀɪsᴛᴇɴᴍᴜꜱɪᴄ ɪꜱ ʀᴜɴɴɪɴɢ ᴍᴀᴅᴇ ʙʏ ᴛᴇᴀᴍ-sᴀɴᴀᴛᴀɴɪ 💕", 200
 
 
 @_flask.route("/health")
@@ -80,7 +80,7 @@ async def _notify_owner(me, assistant_username: str) -> None:
     try:
         content = (
             rich_heading(
-                "🎵 ꜱʜɪᴢᴜᴍᴜꜱɪᴄ ꜱᴛᴀʀᴛᴇᴅ 💕",
+                "🎵 ᴋʀɪsᴛᴇɴᴍᴜꜱɪᴄ ꜱᴛᴀʀᴛᴇᴅ 💕",
                 level=3
             )
             + rich_kv_table([
@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
     # 1. MongoDB
     try:
-        from ShizuMusic.utils.db import start_mongo
+        from KristenMusic.utils.db import start_mongo
         ok = start_mongo()
         if ok:
             LOGGER.info("MongoDB ready.")
@@ -150,10 +150,10 @@ if __name__ == "__main__":
 
     me = bot.get_me()
     LOGGER.info(f"Bot: @{me.username}")
-    import ShizuMusic
+    import KristenMusic
     from pytgcalls import PyTgCalls
-    ShizuMusic.call_py = PyTgCalls(assistant)
-    call_py = ShizuMusic.call_py
+    KristenMusic.call_py = PyTgCalls(assistant)
+    call_py = KristenMusic.call_py
 
     # 5. Set bot commands
     try:
@@ -207,7 +207,7 @@ if __name__ == "__main__":
 
     # 8. Block middleware
     try:
-        from ShizuMusic.utils.decorators import register_block_middleware
+        from KristenMusic.utils.decorators import register_block_middleware
         register_block_middleware()
         LOGGER.info("Block middleware registered")
     except Exception as e:
@@ -216,14 +216,14 @@ if __name__ == "__main__":
     # 9. Load modules
     for mod in ALL_MODULES:
         try:
-            importlib.import_module(f"ShizuMusic.modules.{mod}")
+            importlib.import_module(f"KristenMusic.modules.{mod}")
             LOGGER.info(f"Loaded module: {mod}")
         except Exception as e:
             LOGGER.error(f"Failed to load module {mod}: {e}")
 
     # 10. Stream-end handler
     try:
-        import ShizuMusic.core.call  # noqa: F401
+        import KristenMusic.core.call  # noqa: F401
     except Exception as e:
         LOGGER.error(f"Failed to load call handler: {e}")
 
@@ -232,11 +232,11 @@ if __name__ == "__main__":
     loop.run_until_complete(_notify_owner(me, ASSISTANT_USERNAME))
 
     # 12. Watchdog
-    from ShizuMusic.core.watcher import watchdog
+    from KristenMusic.core.watcher import watchdog
     loop.create_task(watchdog())
     LOGGER.info("Watchdog started")
 
-    LOGGER.info("ShizuMusic is running")
+    LOGGER.info("KristenMusic is running")
 
     idle()
 
@@ -251,4 +251,4 @@ if __name__ == "__main__":
     except Exception:
         pass
 
-    LOGGER.info("✧ ShizuMusic stopped ✧")
+    LOGGER.info("✧ KristenMusic stopped ✧")
