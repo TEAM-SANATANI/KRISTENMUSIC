@@ -1,13 +1,13 @@
 # ═══════════════════════════════════════════════════════════════
-#                     🎵 SHIZUMUSIC
+#                     🎵 KRISTENMUSIC
 #
-#                   © 2026 BAD MUNDA
+#                   © 2026 TEAM SANATANI
 #
-#                Developed with ❤️ by Bad Munda
+#                Developed with ❤️ by Toxic Xᴅ
 #
 #             Do not remove or alter the original credits.
 #
-#           Copyright © 2026 Bad Munda. All rights reserved.
+#           Copyright © 2026 Team Sanatani. All rights reserved.
 #
 #              
 # ═══════════════════════════════════════════════════════════════
@@ -37,31 +37,31 @@ from pytgcalls.types import (
 
 import config
 
-from ShizuMusic import (
+from KristenMusic import (
     LOGGER,
     assistant,
     bot,
     call_py,
 )
 
-from ShizuMusic.core.queue import (
+from KristenMusic.core.queue import (
     remove_from_queue,
 )
 
-from ShizuMusic.strings import DEFAULT_LANG, get_string
-from ShizuMusic.utils.buttons import player_controls_kb, support_updates_pills
-from ShizuMusic.utils.db import is_thumbnail_enabled
+from KristenMusic.strings import DEFAULT_LANG, get_string
+from KristenMusic.utils.buttons import player_controls_kb, support_updates_pills
+from KristenMusic.utils.db import is_thumbnail_enabled
 
-from ShizuMusic.utils.formatters import (
+from KristenMusic.utils.formatters import (
     parse_dur,
     progress_bar,
     short,
 )
 
-from ShizuMusic.utils.language import chat_strings
-from ShizuMusic.utils.logs import logger_active
-from ShizuMusic.utils.routes import notify_chat, register_panel
-from ShizuMusic.utils.thumbnail import thumbnail_html
+from KristenMusic.utils.language import chat_strings
+from KristenMusic.utils.logs import logger_active
+from KristenMusic.utils.routes import notify_chat, register_panel
+from KristenMusic.utils.thumbnail import thumbnail_html
 
 from richgram import (
     rich_edit,
@@ -73,7 +73,7 @@ from richgram import (
     rich_send,
 )
 
-from ShizuMusic.utils.youtube import (
+from KristenMusic.utils.youtube import (
     resolve_stream,
     resolve_video_stream,
 )
@@ -274,7 +274,7 @@ async def play_song(
 
     if not is_video:
         try:
-            from ShizuMusic.modules.effects import maybe_apply_effects
+            from KristenMusic.modules.effects import maybe_apply_effects
             media_path = await maybe_apply_effects(chat_id, media_path)
 
         except Exception as fx_err:
@@ -406,7 +406,7 @@ async def play_song(
         return
 
     try:
-        from ShizuMusic.core.autoplay import schedule_prefetch
+        from KristenMusic.core.autoplay import schedule_prefetch
         schedule_prefetch(chat_id, song)
     except Exception:
         pass
@@ -416,7 +416,7 @@ async def play_song(
     # ─────────────────────────────────────────
 
     try:
-        from ShizuMusic.modules.seek import set_seek_state
+        from KristenMusic.modules.seek import set_seek_state
         set_seek_state(chat_id, 0)
     except Exception:
         pass
@@ -426,7 +426,7 @@ async def play_song(
     # ─────────────────────────────────────────
 
     try:
-        from ShizuMusic.database import (
+        from KristenMusic.database import (
             add_served_chat,
             add_served_user,
             increment_play_count,
