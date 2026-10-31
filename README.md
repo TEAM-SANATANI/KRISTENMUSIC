@@ -1,4 +1,4 @@
-# 🎵 ShizuMusic
+# 🎵 KristenMusic
 <div align="center">
 
 <img src="https://files.catbox.moe/f084wg.png" alt="ShizuMusic" width="100%">
